@@ -1,4 +1,4 @@
-# Windows Communication Foundation (WCF)
+# WCF -- Windows Communication Foundation Client Libraries
 
 |   |Windows|
 |:-:|:-:|
@@ -8,11 +8,13 @@
 
 
 
-The wcf repo contains the library implementation for [Windows Communication Foundation](https://github.com/dotnet/wcf). It includes System.ServiceModel.Http, System.ServiceModel.NetTcp and other libraries. It builds and runs on Windows. You can ['watch'](https://github.com/dotnet/wcf/subscription) the repo to see progress as additional libraries are added.
+This repository contains the [.NET Core](http://github.com/dotnet/core) version of the [Windows Communication Foundation](https://msdn.microsoft.com/en-us/library/dd456779.aspx) client libraries.
 
-The version of WCF in this repo runs on top of the [.NET Core](http://github.com/dotnet/core) platform, namely the [.NET Core Runtime (CoreCLR)](https://github.com/dotnet/coreclr) and [.NET Core Framework (CoreFx)](http://github.com/dotnet/corefx)
+It's a subset of the .NET Framework version of Windows Communication Foundation and currently supports the same functionality available for Windows 8.1 Store apps. It is used to build .NET Core apps, including [Windows UWP](https://msdn.microsoft.com/en-us/library/windows/apps/dn609832.aspx) and [ASP.NET 5](http://weblogs.asp.net/scottgu/introducing-asp-net-5). These client libraries are suitable for mobile devices or on mid-tier servers to communicate with existing WCF services.
 
-This wcf repo is a subset of the full WCF product available on the desktop, and it supports the library profiles already available for building WCF apps for the Windows Store.  Those profiles are primarily client-based, making them suited for mobile devices or on a mid-tier server to communicate with existing WCF services.
+By targeting .NET Core, WCF now has the opportunity for much wider reach across PCs, laptops, mobile devices, Xbox, HoloLens etc.  It can also be ported to other operating systems since it runs on .NET Core, which is adding support for Linux and OS X.
+
+We have deliberately opened the doors to the code early in the process so that you can be part of the effort by contributing to the project or providing feedback. Several features are still a work in progress, and we expect to enable them as soon as possible.  Click on [Issues](https://github.com/dotnet/wcf/issues) to follow how we are prioritizing the work. Our goal is to achieve feature parity with the corresponding Windows Store libraries and then improve based on your feedback.
 
 ## How to Engage, Contribute and Provide Feedback
 
@@ -28,16 +30,20 @@ Looking for something to work on? The list of [up-for-grabs issues](https://gith
 * [Developer Guide](https://github.com/dotnet/wcf/wiki/Developer-Guide)
 * [Issue Guide](https://github.com/dotnet/wcf/wiki/Issue-Guide)
 
-You are also encouraged to start a discussion by filing an issue or creating a
-gist.
+You are also encouraged to start a discussion by filing a [New Issue](https://github.com/dotnet/wcf/issues/new).
 
 You can discuss .NET OSS more generally in the [.NET Foundation forums].
+
+Want to chat with other members of the WCF community?
+
+[![Join the chat at https://gitter.im/dotnet/wcf](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dotnet/wcf?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 
 [.NET Foundation forums]: http://forums.dotnetfoundation.org/
 
 ## WCF Library Components
 
-The repo contains the following library components.
+This repo contains the following library components.
 
 * **System.ServiceModel.Primitives**.  Provides the common types used by all of the WCF libraries.
 
@@ -51,7 +57,7 @@ The repo contains the following library components.
 
 ## License
 
-Windows Communication Foundation (including the wcf repo) is licensed under the [MIT license](LICENSE).
+This WCF repo is licensed under the [MIT license](LICENSE).
 
 ## .NET Foundation
 
@@ -65,3 +71,11 @@ There are many .NET related projects on GitHub.
 - The [.NET Core repo](https://github.com/dotnet/core) links to .NET Core related projects from Microsoft.
 - The [ASP.NET home repo](https://github.com/aspnet/home) is the best place to start learning about ASP.NET 5.
 - [dotnet.github.io](http://dotnet.github.io) is a good place to discover .NET Foundation projects.
+
+## The Windows Communication Foundation Story
+
+[Windows Communication Foundation](https://msdn.microsoft.com/en-us/library/dd456779.aspx) has been part of the full .NET Framework for a number of years. Microsoft continues to develop this version and has made the source code available via [Reference Source](http://referencesource.microsoft.com).
+
+With the introduction of Windows 8, Microsoft made some of the client-oriented functionality available in the [Windows Store](https://msdn.microsoft.com/en-us/library/hh556233(v=vs.110).aspx).  This allowed mobile devices to interact with WCF services that were built with the .NET framework version.
+
+This new WCF GitHub repository differs from these other products in 2 ways. First, it is built on .NET Core so that it can be used on a wider range of devices and operating system. Second, it is  open-source and managed by the [.NET Foundation](http://www.dotnetfoundation.org/projects). Microsoft builds  and publishes NuGet packages from the code in this repository.  UWP and ASP.NET 5 applications use those packages.
